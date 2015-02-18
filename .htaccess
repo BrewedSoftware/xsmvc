@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^$ /api/dispatcher.php?controller=home&action=display&format=html [QSA,L]
+RewriteRule ^(.*).html$ /api/dispatcher.php?request=$1&format=html [QSA,L]
+RewriteRule ^(.*).json$ /api/dispatcher.php?request=$1&format=json [QSA,L]
