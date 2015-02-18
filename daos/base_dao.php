@@ -27,9 +27,9 @@ abstract class base_dao {
 
 	public function __construct()
 	{
-		$dsn = 'mysql:dbname=gdl;host=localhost';
-		$user = 'root';
-		$password = 'bigdog12';
+		$dsn = 'mysql:dbname=test;host=localhost';
+		$user = 'mysqluser';
+		$password = 'password';
 
 		try {
 			$this->connection = new PDO($dsn, $user, $password);
