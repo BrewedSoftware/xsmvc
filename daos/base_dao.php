@@ -66,21 +66,21 @@ abstract class base_dao {
 		return $this->connection->lastInsertId($name);
 	}
 
-  public function nullOrQuote($value) {
-    if (empty($value)) {
-      return "NULL";
-    } else {
-      return $this->connection->quote($value);
-    }
-  }
+	public function nullOrQuote($value) {
+		if (empty($value)) {
+			return "NULL";
+		} else {
+			return $this->connection->quote($value);
+		}
+	}
 
-  public function nullOrValue($value) {
-    if (empty($value)) {
-      return "NULL";
-    } else {
-      return $value;
-    }
-  }
+	public function nullOrValue($value) {
+		if (empty($value)) {
+			return "NULL";
+		} else {
+			return $value;
+		}
+	}
 
 	public function startsWith($haystack, $needle)
 	{

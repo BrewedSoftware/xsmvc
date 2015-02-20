@@ -43,7 +43,7 @@ if (isset($_REQUEST['request'])) {
 				$i++;
 				break;
 			default:
-        $get_array[$arg_array[$i]] = $arg_array[$i+1];
+				$get_array[$arg_array[$i]] = $arg_array[$i+1];
 				$i = $i + 2;
 		}
 	}
@@ -51,9 +51,9 @@ if (isset($_REQUEST['request'])) {
 
 $post_array = json_decode(file_get_contents("php://input"), true);
 if (!empty($post_array)) {
-  $request_array = array_merge($get_array, $post_array);
+	$request_array = array_merge($get_array, $post_array);
 } else {
-  $request_array = $get_array;
+	$request_array = $get_array;
 }
 
 $requested_controller_name = 'api\\controllers\\'.$requested_controller.'_controller';

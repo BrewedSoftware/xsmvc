@@ -15,17 +15,17 @@ abstract class base_controller {
 	 */
 	public $format = "html";
 
-  /**
-   * @param $format string
-   * @return \api\controllers\base_controller
-   */
-  public static function withFormat($format) {
-    $class = get_called_class();
-    /** @var $instance base_controller */
-    $instance = new $class();
-    $instance->format = $format;
-    return $instance;
-  }
+	/**
+	 * @param $format string
+	 * @return \api\controllers\base_controller
+	 */
+	public static function withFormat($format) {
+		$class = get_called_class();
+		/** @var $instance base_controller */
+		$instance = new $class();
+		$instance->format = $format;
+		return $instance;
+	}
 
 	public function valueOrNullIfNotExists(&$value) {
 		return (empty($value) ? null : $value);

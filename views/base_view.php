@@ -9,18 +9,18 @@
 namespace api\views;
 
 abstract class base_view {
-  public $format = "html";
+	public $format = "html";
 
-  public function __construct($format) {
-    $this->format = $format;
-  }
+	public function __construct($format) {
+		$this->format = $format;
+	}
 
 	/**
 	 * @param $model \api\models\base_model
 	 */
 	public function response(&$model){
 		if ($this->format == 'json') {
-      header('Content-Type: application/json');
+			header('Content-Type: application/json');
 			echo json_encode($model);
 			return;
 		} ?>
@@ -42,8 +42,8 @@ abstract class base_view {
 				</div>
 				<div data-role="collapsible">
 					<h4>Session and Model</h4>
-		      <pre><?php print_r($_SESSION); ?></pre>
-		      <pre><?php print_r($model); ?></pre>
+					<pre><?php print_r($_SESSION); ?></pre>
+					<pre><?php print_r($model); ?></pre>
 				</div>
 			</body>
 		</html>
@@ -66,7 +66,7 @@ abstract class base_view {
 				API Model: <?php get_class($model); ?>
 			</h1>
 		</div>
-  <?php }
+	<?php }
 
 	public function footer(&$model){ ?>
 		<div id="site_title">
@@ -110,5 +110,5 @@ abstract class base_view {
 		return $link;
 	}
 
-  abstract public function content(&$model);
+	abstract public function content(&$model);
 }
